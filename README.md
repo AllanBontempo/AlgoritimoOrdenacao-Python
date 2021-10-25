@@ -1,7 +1,7 @@
 # AlgoritimoOrdenacao-Python
 
 *Note: This ReadMe avaliable in Portuguese and English.* <br>
-*Observação: Esse ReadMe está disponível em português e inglês. *
+*Observação: Esse ReadMe está disponível em português e inglês.*
 
 
 ## English:
