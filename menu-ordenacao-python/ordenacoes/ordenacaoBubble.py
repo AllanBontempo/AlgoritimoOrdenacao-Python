@@ -1,17 +1,12 @@
 def ordenar(array, ordenacao):
-    for numeros in array:
-        if ordenacao == "c":
-            for index, numero in enumerate(array):
-                if (index+1 < len(array) and index - 1 >= 0):
-                    if array[index-1] > array[index]:
-                        auxiliar = array[index-1]
-                        array[index-1] = array[index]
-                        array[index] = auxiliar
-        elif ordenacao == "d":
-            for index, numero in enumerate(array):
-                if (index+1 < len(array) and index - 1 >= 0):
-                    if array[index-1] < array[index]:
-                        auxiliar = array[index-1]
-                        array[index-1] = array[index]
-                        array[index] = auxiliar
+    tamanho = len(array)
+    for i in range(tamanho-1):
+        for j in range(0, tamanho-i-1):
+            if ordenacao == 'c':
+                if array[j] > array[j+1]:
+                    array[j], array[j + 1] = array[j + 1], array[j]
+            elif ordenacao == 'd':
+                if array[j] < array[j+1]:
+                    array[j], array[j + 1] = array[j + 1], array[j]
     print(array)
+

@@ -1,31 +1,16 @@
 def ordenar(array, ordenacao):
-    for index, numero in enumerate(array):
-        j = index + 1
-        if ordenacao == "c":
-            ordenarCrescente(array, index, j)
-        elif ordenacao == "d":
-            ordenarDecrescente(array, index, j)
+    for i in range(1, len(array)):
+        chave = array[i]
+        j = i-1
+        if ordenacao == 'c':
+            while j >= 0 and chave < array[j]:
+                array[j+1] = array[j]
+                j -= 1
+            array[j+1] = chave
+        elif ordenacao == 'd':
+            while j >= 0 and chave > array[j]:
+                array[j+1] = array[j]
+                j -= 1
+            array[j+1] = chave
 
     print(array)
-
-
-def ordenarCrescente(array, index, j):
-    for number in array:
-        if j < len(array):
-            if array[j] < array[index]:
-                auxiliar = array[j]
-                array[j] = array[index]
-                array[index] = auxiliar
-            j = j + 1
-    return array
-
-
-def ordenarDecrescente(array, index, j):
-    for number in array:
-        if j < len(array):
-            if array[j] > array[index]:
-                auxiliar = array[j]
-                array[j] = array[index]
-                array[index] = auxiliar
-            j = j + 1
-    return array
