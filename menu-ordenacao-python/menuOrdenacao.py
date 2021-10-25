@@ -26,7 +26,7 @@ def main():
 
     print("\n")
     print("Escolha o método de ordenação da sua escolha: \n\n 1. Bubble Sort \n\
-    2. Selection Sort \n 3. Insertion Sort")
+ 2. Selection Sort \n 3. Insertion Sort")
 
     metodoOrdenacao = int(input("Digite 1, 2 ou 3 e escolha seu método: "))
 
@@ -40,16 +40,26 @@ def main():
     if metodoOrdenacao == 1:
         print("\nOrdenando em Bubble Sort...")
         ordenacaoBubble.ordenar(array, ordenacao)
+        if retornarAoMenu() == "sim":
+            main()
+            print("\n")
     elif metodoOrdenacao == 2:
         print("\nOrdenando em Selection Sort...")
         ordenacaoSelection.ordenar(array, ordenacao)
+        if retornarAoMenu() == "sim":
+            main()
+            print("\n")
     elif metodoOrdenacao == 3:
         print("\nOrdenando em Insertion Sort...")
         ordenacaoInsertion.ordenar(array, ordenacao)
+        if retornarAoMenu() == "sim":
+            main()
+            print("\n")
     else:
         print("Esse método não foi encontrado")
             
-
+def retornarAoMenu():
+    return input("Deseja retornar ao menu? Digite sim para voltar \n").lower()
 
 if __name__ == "__main__":
     main()
